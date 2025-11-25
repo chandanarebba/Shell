@@ -10,10 +10,10 @@ if [ $USER_ID -ne 0 ]; then
 fi
 VALIDATE(){
     if [ $1 -ne 0 ]; then
-       echo "ERROR: Installing $2 is $R failure $N"
+       echo -e "ERROR: Installing $2 is $R failure $N"
        exit 1
     else
-       echo "Installing $2 is $G success $N"
+       echo -e "Installing $2 is $G success $N"
     fi
 }
 
@@ -22,5 +22,5 @@ if [ $? -ne 0 ]; then
     dnf install mysql-server -y
     VALIDATE $? "MYSQL"
 else
-    echo "MYSQL is already exists......$Y SKIPPING $N"
+    echo -e "MYSQL is already exists......$Y SKIPPING $N"
 fi
