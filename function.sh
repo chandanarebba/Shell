@@ -11,9 +11,9 @@ fi
 VALIDATE(){
     if [ $1 -ne 0 ]; then
     echo "ERROR: Installing $2 is failure "
+    exit 1
     else
     echo "Installing $2 is success"
-    exit 1
     fi
 }
 dnf install mysql-server -y
